@@ -1,0 +1,3 @@
+include ':messengeropener'
+include ':app'
+rootProject.name = "messenger-opener"
