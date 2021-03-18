@@ -24,7 +24,7 @@ class SampleActivity : AppCompatActivity() {
         }
 
         binding.btnSkype.setOnClickListener{
-//            Opener.openSkype(this, SKYPE_ACCOUNT)
+            Opener.openSkype(this, SKYPE_ACCOUNT)
         }
 
         binding.btnWhatsapp.setOnClickListener{
