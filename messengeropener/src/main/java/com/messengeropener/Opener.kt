@@ -43,10 +43,19 @@ object Opener {
         )
     }
 
+    fun openSkype(context: Context?, account: String) {
+        callMessenger(
+            context,
+            SKYPE_ID,
+            SKYPE_URI,
+            account
+        )
+    }
+
     private fun callMessenger(context: Context?, messengerId: String, messengerUri: String, account: String){
         if (isPackageInstalled(context, messengerId)) {
             try {
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(messengerUri + Uri.encode(account)))
+                val intent = Intent(Intent.ACTION_VIEW, buildUri(messengerId, messengerUri, account))
                 intent.setPackage(messengerId)
                 context?.startActivity(intent)
             } catch (e: Exception) {
@@ -77,5 +86,13 @@ object Opener {
                 )
             )
         }
+    }
+
+    private fun buildUri(messengerId: String, messengerUri: String, account: String): Uri{
+        return Uri.parse(if (messengerId == SKYPE_ID){
+            String.format(SKYPE_URI, account)
+        } else {
+            messengerUri + Uri.encode(account)
+        })
     }
 }

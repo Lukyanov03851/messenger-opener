@@ -12,5 +12,8 @@ const val TELEGRAM_URI = "https://t.me/"
 const val FACEBOOK_ID = "com.facebook.orca"
 const val FACEBOOK_URI = "http://m.me/"
 
+const val SKYPE_ID = "com.skype.raider"
+const val SKYPE_URI = "skype:%s?chat"
+
 const val MARKET_DETAILS_ID = "market://details?id="
 const val HTTPS_PLAY_GOOGLE_COM_STORE_APPS_DETAILS_ID = "https://play.google.com/store/apps/details?id="
